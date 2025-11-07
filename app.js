@@ -77,7 +77,9 @@ const app = express();
 
 // Middleware
 app.use(express.json());  // Parse incoming requests with JSON payload
-app.use(cors());  // Enable CORS for all domains (you can restrict to your frontend domain)
+app.use(cors({
+  origin:"https://bikerental-nnkvorkx1-sohan-acs-projects.vercel.app/",
+}));  // Enable CORS for all domains (you can restrict to your frontend domain)
 
 // Routes
 app.get('/', (req, res) => {
