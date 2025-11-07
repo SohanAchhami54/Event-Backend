@@ -74,10 +74,12 @@ const { bookingRouter } = require('./routes/bookingRouter');
 const { guestbookingRouter } = require('./routes/userRouter');
 
 const app = express();
-
+const corsOptions={
+  origin:'*',
+}
 // Middleware
 app.use(express.json());  // Parse incoming requests with JSON payload
-app.use(cors());  // Enable CORS for all domains (you can restrict to your frontend domain)
+app.use(cors(corsOptions));  // Enable CORS for all domains (you can restrict to your frontend domain)
 
 // Routes
 app.get('/', (req, res) => {
