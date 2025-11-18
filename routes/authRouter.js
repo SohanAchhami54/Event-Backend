@@ -10,6 +10,4 @@ authRouter.post('/login',authcontroller.postloginuser);
 authRouter.get('/data',middleware.protect,authcontroller.getUserData);
 
 authRouter.get('/bikes',authcontroller.getBikes);
-module.exports={
-    authRouter:authRouter,
-}
+module.exports=authRouter;
